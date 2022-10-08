@@ -4,6 +4,7 @@ import { z } from "zod";
 import { exampleRouter } from "./example";
 import { authRouter } from "./auth";
 import { Prisma } from "@prisma/client";
+import { frontPageRouter } from "./front-page";
 
 export const appRouter = t.router({
   example: exampleRouter,
@@ -31,6 +32,7 @@ export const appRouter = t.router({
         where: { tierLists: { some: { id: input } } }
       });
     }),
+  frontPage: frontPageRouter,
 });
 
 // export type definition of API

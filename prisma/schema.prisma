@@ -14,6 +14,12 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model tierlist_icon{
+    url String  @id
+    image String
+    name String
+}
+
 model Example {
     id String @id @default(cuid())
 }

@@ -1,0 +1,779 @@
+
+> hack-ohio-22@0.1.0 dev
+> next dev
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+info  - Loaded env from /home/christopher/hack-ohio-22/.env
+event - compiled client and server successfully in 684 ms (293 modules)
+wait  - compiling /api/trpc/[trpc] (client and server)...
+event - compiled successfully in 57 ms (65 modules)
+listing bucket items
+<ref *1> Request {
+  domain: null,
+  service: Service {
+    config: Config {
+      credentials: [EnvironmentCredentials],
+      credentialProvider: [CredentialProviderChain],
+      region: 'us-east-1',
+      logger: null,
+      apiVersions: {},
+      apiVersion: '2006-03-01',
+      endpoint: 's3.amazonaws.com',
+      httpOptions: [Object],
+      maxRetries: undefined,
+      maxRedirects: 10,
+      paramValidation: true,
+      sslEnabled: true,
+      s3ForcePathStyle: false,
+      s3BucketEndpoint: false,
+      s3DisableBodySigning: true,
+      s3UsEast1RegionalEndpoint: undefined,
+      s3UseArnRegion: undefined,
+      computeChecksums: true,
+      convertResponseTypes: true,
+      correctClockSkew: false,
+      customUserAgent: null,
+      dynamoDbCrc32: true,
+      systemClockOffset: 0,
+      signatureVersion: 's3',
+      signatureCache: true,
+      retryDelayOptions: {},
+      useAccelerateEndpoint: false,
+      clientSideMonitoring: false,
+      endpointDiscoveryEnabled: undefined,
+      endpointCacheSize: 1000,
+      hostPrefixEnabled: true,
+      stsRegionalEndpoints: 'legacy',
+      useFipsEndpoint: false,
+      useDualstackEndpoint: false,
+      token: null,
+      tokenProvider: [TokenProviderChain],
+      params: [Object]
+    },
+    isGlobalEndpoint: false,
+    endpoint: Endpoint {
+      protocol: 'https:',
+      host: 's3.amazonaws.com',
+      port: 443,
+      hostname: 's3.amazonaws.com',
+      pathname: '/',
+      path: '/',
+      href: 'https://s3.amazonaws.com/'
+    },
+    _events: { apiCallAttempt: [Array], apiCall: [Array] },
+    MONITOR_EVENTS_BUBBLE: [Function: EVENTS_BUBBLE],
+    CALL_EVENTS_BUBBLE: [Function: CALL_EVENTS_BUBBLE],
+    _clientId: 1
+  },
+  operation: 'listObjectsV2',
+  params: { Bucket: 'hack-ohio-22-tierlist-images', MaxKeys: 10 },
+  httpRequest: HttpRequest {
+    method: 'GET',
+    path: '/?list-type=2&max-keys=10',
+    headers: {
+      'User-Agent': 'aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback',
+      'Content-Length': 0,
+      Host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      'X-Amz-Content-Sha256': 'UNSIGNED-PAYLOAD',
+      'X-Amz-Date': '20221008T193821Z',
+      'x-amz-security-token': 'IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJGMEQCIFTXSzeNt5sijLajsAug4yH4+wNIoHawAerLwymF+mVdAiB7qs1aAKaybneTHMUZReQxF4b8mx4SAGWjUXZTuo3RFiqXAggwEAAaDDMxMjE5OTE0MDY3OSIM8LjcL3KmePkkn80eKvQBzKLeOXx4Dh/qwuANOAlNmycy8m1r5x9qvhgBHYeRHkS54dS9538ywq42AXXBFiQj8DZPb/U2Dq+3GUvjeiU5uk22RHoftfClrbltZ7gLd2J7c/fqmTvfg7OtEgA7bNo35wvsmM2YwMOHTAo+mfbhTTVZ/CWB2aDvBdmXq18NR7Zra0fWMunNS8kOp0t8DAlBxxwXPBPcJtol9c2z8EmSC5UDyrhrkp9n50Qxwi/JMUs8Yukp+2BaspCzdZ9uKj43fzvStTjc0CMDuWcA5FN3NaFHBZElrVXp67jX5bT6SPSUs8BtAeSyfEzokZ1/JZcK29C8oTCPp4aaBjqeAfoFyLbQNer9VOuGc+0TNBpc87vqsK6Kf8paDUH0YvlKxHFYEghBwweeWowdgBiWLW3tzjTpfC7/Xh42jV2YhqxudCMqLQZ2PpzCNXtC0/TCx7t5936Tjg4Qdq6qiXBvepanNdLObQnI577UAOI7rLTDA1hO5QAyMbNwC1RFAXi7nfGTsc9SPrQeBHJUdne+O+qeFmabOORGkXQ3yMyp',
+      Authorization: 'AWS4-HMAC-SHA256 Credential=ASIAURMEE2VDRI4DWCYB/20221008/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=e14f87834286f6d00d538ae1edbae8ae739802fff5f5fd308260c4975093fa4c'
+    },
+    body: '',
+    endpoint: {
+      protocol: 'https:',
+      host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      port: 443,
+      hostname: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      pathname: '/',
+      path: '/',
+      href: 'https://s3.amazonaws.com/',
+      constructor: [Function]
+    },
+    region: 'us-east-1',
+    _userAgent: 'aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback',
+    virtualHostedBucket: 'hack-ohio-22-tierlist-images',
+    stream: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 6,
+      _maxListeners: undefined,
+      outputData: [Array],
+      outputSize: 1270,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: null,
+      _header: 'GET /?list-type=2&max-keys=10 HTTP/1.1\r\n' +
+        'User-Agent: aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback\r\n' +
+        'Content-Length: 0\r\n' +
+        'Host: hack-ohio-22-tierlist-images.s3.amazonaws.com\r\n' +
+        'X-Amz-Content-Sha256: UNSIGNED-PAYLOAD\r\n' +
+        'X-Amz-Date: 20221008T193821Z\r\n' +
+        'x-amz-security-token: IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJGMEQCIFTXSzeNt5sijLajsAug4yH4+wNIoHawAerLwymF+mVdAiB7qs1aAKaybneTHMUZReQxF4b8mx4SAGWjUXZTuo3RFiqXAggwEAAaDDMxMjE5OTE0MDY3OSIM8LjcL3KmePkkn80eKvQBzKLeOXx4Dh/qwuANOAlNmycy8m1r5x9qvhgBHYeRHkS54dS9538ywq42AXXBFiQj8DZPb/U2Dq+3GUvjeiU5uk22RHoftfClrbltZ7gLd2J7c/fqmTvfg7OtEgA7bNo35wvsmM2YwMOHTAo+mfbhTTVZ/CWB2aDvBdmXq18NR7Zra0fWMunNS8kOp0t8DAlBxxwXPBPcJtol9c2z8EmSC5UDyrhrkp9n50Qxwi/JMUs8Yukp+2BaspCzdZ9uKj43fzvStTjc0CMDuWcA5FN3NaFHBZElrVXp67jX5bT6SPSUs8BtAeSyfEzokZ1/JZcK29C8oTCPp4aaBjqeAfoFyLbQNer9VOuGc+0TNBpc87vqsK6Kf8paDUH0YvlKxHFYEghBwweeWowdgBiWLW3tzjTpfC7/Xh42jV2YhqxudCMqLQZ2PpzCNXtC0/TCx7t5936Tjg4Qdq6qiXBvepanNdLObQnI577UAOI7rLTDA1hO5QAyMbNwC1RFAXi7nfGTsc9SPrQeBHJUdne+O+qeFmabOORGkXQ3yMyp\r\n' +
+        'Authorization: AWS4-HMAC-SHA256 Credential=ASIAURMEE2VDRI4DWCYB/20221008/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=e14f87834286f6d00d538ae1edbae8ae739802fff5f5fd308260c4975093fa4c\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/?list-type=2&max-keys=10',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      protocol: 'https:',
+      didCallback: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(kUniqueHeaders)]: null
+    }
+  },
+  startTime: 2022-10-08T19:38:21.592Z,
+  response: Response {
+    request: [Circular *1],
+    data: null,
+    error: null,
+    retryCount: 0,
+    redirectCount: 0,
+    httpResponse: HttpResponse {
+      statusCode: undefined,
+      headers: {},
+      body: undefined,
+      streaming: false,
+      stream: null,
+      _abortCallback: [Function: callNextListener]
+    },
+    maxRetries: 3,
+    maxRedirects: 10
+  },
+  _asm: AcceptorStateMachine {
+    currentState: 'send',
+    states: {
+      validate: [Object],
+      build: [Object],
+      afterBuild: [Object],
+      sign: [Object],
+      retry: [Object],
+      afterRetry: [Object],
+      send: [Object],
+      validateResponse: [Object],
+      extractError: [Object],
+      extractData: [Object],
+      restart: [Object],
+      success: [Object],
+      error: [Object],
+      complete: [Object]
+    }
+  },
+  _haltHandlersOnError: false,
+  _events: {
+    validate: [
+      [Function (anonymous)],
+      [Function: optInUsEast1RegionalEndpoint],
+      [Function: validateBucketName],
+      [Function],
+      [Function: BUILD_IDEMPOTENCY_TOKENS],
+      [Function: VALIDATE_PARAMETERS],
+      [Function: validateScheme],
+      [Function: validateBucketEndpoint],
+      [Function: correctBucketRegionFromCache]
+    ],
+    afterBuild: [
+      [Function: COMPUTE_CHECKSUM],
+      [Function: SET_CONTENT_LENGTH],
+      [Function: SET_HTTP_HOST],
+      [Function: SET_TRACE_ID],
+      [Function: addExpect100Continue],
+      [Function: disableBodySigning]
+    ],
+    restart: [ [Function: RESTART] ],
+    sign: [ [Function (anonymous)], [Function], [Function] ],
+    validateResponse: [ [Function: VALIDATE_RESPONSE], [Function (anonymous)] ],
+    error: [ [Function: ERROR] ],
+    send: [ [Function] ],
+    httpHeaders: [ [Function: HTTP_HEADERS] ],
+    httpData: [ [Function: HTTP_DATA] ],
+    httpDone: [ [Function: HTTP_DONE] ],
+    retry: [
+      [Function: FINALIZE_ERROR],
+      [Function: INVALIDATE_CREDENTIALS],
+      [Function: EXPIRED_SIGNATURE],
+      [Function: CLOCK_SKEWED],
+      [Function: REDIRECT],
+      [Function: RETRY_CHECK],
+      [Function: API_CALL_ATTEMPT_RETRY]
+    ],
+    afterRetry: [ [Function] ],
+    build: [
+      [Function: buildRequest],
+      [Function: addContentType],
+      [Function: computeContentMd5],
+      [Function: computeSseCustomerKeyMd5],
+      [Function: populateURI]
+    ],
+    extractData: [
+      [Function: extractData],
+      [Function: extractRequestId],
+      [Function: hoistPayloadMember],
+      [Function: extractData],
+      [Function: extractErrorFrom200Response]
+    ],
+    extractError: [
+      [Function: extractError],
+      [Function: extractRequestId],
+      [Function: extractError],
+      [Function]
+    ],
+    httpError: [ [Function: ENOTFOUND_ERROR] ],
+    beforePresign: [ [Function: prepareSignedUrl] ],
+    success: [ [Function: API_CALL_ATTEMPT] ],
+    complete: [ [Function: API_CALL], [Function (anonymous)] ]
+  },
+  emit: [Function: emit],
+  API_CALL_ATTEMPT: [Function: API_CALL_ATTEMPT],
+  API_CALL_ATTEMPT_RETRY: [Function: API_CALL_ATTEMPT_RETRY],
+  API_CALL: [Function: API_CALL],
+  signedAt: 2022-10-08T19:38:21.596Z
+}
+end listing bucket items
+wait  - compiling / (client and server)...
+event - compiled client and server successfully in 107 ms (328 modules)
+0
+wait  - compiling /api/auth/[...nextauth] (client and server)...
+event - compiled successfully in 17 ms (67 modules)
+listing bucket items
+<ref *1> Request {
+  domain: null,
+  service: Service {
+    config: Config {
+      credentials: [EnvironmentCredentials],
+      credentialProvider: [CredentialProviderChain],
+      region: 'us-east-1',
+      logger: null,
+      apiVersions: {},
+      apiVersion: '2006-03-01',
+      endpoint: 's3.amazonaws.com',
+      httpOptions: [Object],
+      maxRetries: undefined,
+      maxRedirects: 10,
+      paramValidation: true,
+      sslEnabled: true,
+      s3ForcePathStyle: false,
+      s3BucketEndpoint: false,
+      s3DisableBodySigning: true,
+      s3UsEast1RegionalEndpoint: undefined,
+      s3UseArnRegion: undefined,
+      computeChecksums: true,
+      convertResponseTypes: true,
+      correctClockSkew: false,
+      customUserAgent: null,
+      dynamoDbCrc32: true,
+      systemClockOffset: 0,
+      signatureVersion: 's3',
+      signatureCache: true,
+      retryDelayOptions: {},
+      useAccelerateEndpoint: false,
+      clientSideMonitoring: false,
+      endpointDiscoveryEnabled: undefined,
+      endpointCacheSize: 1000,
+      hostPrefixEnabled: true,
+      stsRegionalEndpoints: 'legacy',
+      useFipsEndpoint: false,
+      useDualstackEndpoint: false,
+      token: null,
+      tokenProvider: [TokenProviderChain],
+      params: [Object]
+    },
+    isGlobalEndpoint: false,
+    endpoint: Endpoint {
+      protocol: 'https:',
+      host: 's3.amazonaws.com',
+      port: 443,
+      hostname: 's3.amazonaws.com',
+      pathname: '/',
+      path: '/',
+      href: 'https://s3.amazonaws.com/'
+    },
+    _events: { apiCallAttempt: [Array], apiCall: [Array] },
+    MONITOR_EVENTS_BUBBLE: [Function: EVENTS_BUBBLE],
+    CALL_EVENTS_BUBBLE: [Function: CALL_EVENTS_BUBBLE],
+    _clientId: 2
+  },
+  operation: 'listObjectsV2',
+  params: { Bucket: 'hack-ohio-22-tierlist-images', MaxKeys: 10 },
+  httpRequest: HttpRequest {
+    method: 'GET',
+    path: '/?list-type=2&max-keys=10',
+    headers: {
+      'User-Agent': 'aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback',
+      'Content-Length': 0,
+      Host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      'X-Amz-Content-Sha256': 'UNSIGNED-PAYLOAD',
+      'X-Amz-Date': '20221008T193823Z',
+      'x-amz-security-token': 'IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJGMEQCIFTXSzeNt5sijLajsAug4yH4+wNIoHawAerLwymF+mVdAiB7qs1aAKaybneTHMUZReQxF4b8mx4SAGWjUXZTuo3RFiqXAggwEAAaDDMxMjE5OTE0MDY3OSIM8LjcL3KmePkkn80eKvQBzKLeOXx4Dh/qwuANOAlNmycy8m1r5x9qvhgBHYeRHkS54dS9538ywq42AXXBFiQj8DZPb/U2Dq+3GUvjeiU5uk22RHoftfClrbltZ7gLd2J7c/fqmTvfg7OtEgA7bNo35wvsmM2YwMOHTAo+mfbhTTVZ/CWB2aDvBdmXq18NR7Zra0fWMunNS8kOp0t8DAlBxxwXPBPcJtol9c2z8EmSC5UDyrhrkp9n50Qxwi/JMUs8Yukp+2BaspCzdZ9uKj43fzvStTjc0CMDuWcA5FN3NaFHBZElrVXp67jX5bT6SPSUs8BtAeSyfEzokZ1/JZcK29C8oTCPp4aaBjqeAfoFyLbQNer9VOuGc+0TNBpc87vqsK6Kf8paDUH0YvlKxHFYEghBwweeWowdgBiWLW3tzjTpfC7/Xh42jV2YhqxudCMqLQZ2PpzCNXtC0/TCx7t5936Tjg4Qdq6qiXBvepanNdLObQnI577UAOI7rLTDA1hO5QAyMbNwC1RFAXi7nfGTsc9SPrQeBHJUdne+O+qeFmabOORGkXQ3yMyp',
+      Authorization: 'AWS4-HMAC-SHA256 Credential=ASIAURMEE2VDRI4DWCYB/20221008/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=c3c1ad18e059f72d32e38af57eedeb04f3a62fc12cced631b33afa12d76e3511'
+    },
+    body: '',
+    endpoint: {
+      protocol: 'https:',
+      host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      port: 443,
+      hostname: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      pathname: '/',
+      path: '/',
+      href: 'https://s3.amazonaws.com/',
+      constructor: [Function]
+    },
+    region: 'us-east-1',
+    _userAgent: 'aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback',
+    virtualHostedBucket: 'hack-ohio-22-tierlist-images',
+    stream: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 6,
+      _maxListeners: undefined,
+      outputData: [Array],
+      outputSize: 1270,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: null,
+      _header: 'GET /?list-type=2&max-keys=10 HTTP/1.1\r\n' +
+        'User-Agent: aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback\r\n' +
+        'Content-Length: 0\r\n' +
+        'Host: hack-ohio-22-tierlist-images.s3.amazonaws.com\r\n' +
+        'X-Amz-Content-Sha256: UNSIGNED-PAYLOAD\r\n' +
+        'X-Amz-Date: 20221008T193823Z\r\n' +
+        'x-amz-security-token: IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJGMEQCIFTXSzeNt5sijLajsAug4yH4+wNIoHawAerLwymF+mVdAiB7qs1aAKaybneTHMUZReQxF4b8mx4SAGWjUXZTuo3RFiqXAggwEAAaDDMxMjE5OTE0MDY3OSIM8LjcL3KmePkkn80eKvQBzKLeOXx4Dh/qwuANOAlNmycy8m1r5x9qvhgBHYeRHkS54dS9538ywq42AXXBFiQj8DZPb/U2Dq+3GUvjeiU5uk22RHoftfClrbltZ7gLd2J7c/fqmTvfg7OtEgA7bNo35wvsmM2YwMOHTAo+mfbhTTVZ/CWB2aDvBdmXq18NR7Zra0fWMunNS8kOp0t8DAlBxxwXPBPcJtol9c2z8EmSC5UDyrhrkp9n50Qxwi/JMUs8Yukp+2BaspCzdZ9uKj43fzvStTjc0CMDuWcA5FN3NaFHBZElrVXp67jX5bT6SPSUs8BtAeSyfEzokZ1/JZcK29C8oTCPp4aaBjqeAfoFyLbQNer9VOuGc+0TNBpc87vqsK6Kf8paDUH0YvlKxHFYEghBwweeWowdgBiWLW3tzjTpfC7/Xh42jV2YhqxudCMqLQZ2PpzCNXtC0/TCx7t5936Tjg4Qdq6qiXBvepanNdLObQnI577UAOI7rLTDA1hO5QAyMbNwC1RFAXi7nfGTsc9SPrQeBHJUdne+O+qeFmabOORGkXQ3yMyp\r\n' +
+        'Authorization: AWS4-HMAC-SHA256 Credential=ASIAURMEE2VDRI4DWCYB/20221008/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=c3c1ad18e059f72d32e38af57eedeb04f3a62fc12cced631b33afa12d76e3511\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/?list-type=2&max-keys=10',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      protocol: 'https:',
+      didCallback: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(kUniqueHeaders)]: null
+    }
+  },
+  startTime: 2022-10-08T19:38:23.173Z,
+  response: Response {
+    request: [Circular *1],
+    data: null,
+    error: null,
+    retryCount: 0,
+    redirectCount: 0,
+    httpResponse: HttpResponse {
+      statusCode: undefined,
+      headers: {},
+      body: undefined,
+      streaming: false,
+      stream: null,
+      _abortCallback: [Function: callNextListener]
+    },
+    maxRetries: 3,
+    maxRedirects: 10
+  },
+  _asm: AcceptorStateMachine {
+    currentState: 'send',
+    states: {
+      validate: [Object],
+      build: [Object],
+      afterBuild: [Object],
+      sign: [Object],
+      retry: [Object],
+      afterRetry: [Object],
+      send: [Object],
+      validateResponse: [Object],
+      extractError: [Object],
+      extractData: [Object],
+      restart: [Object],
+      success: [Object],
+      error: [Object],
+      complete: [Object]
+    }
+  },
+  _haltHandlersOnError: false,
+  _events: {
+    validate: [
+      [Function (anonymous)],
+      [Function: optInUsEast1RegionalEndpoint],
+      [Function: validateBucketName],
+      [Function],
+      [Function: BUILD_IDEMPOTENCY_TOKENS],
+      [Function: VALIDATE_PARAMETERS],
+      [Function: validateScheme],
+      [Function: validateBucketEndpoint],
+      [Function: correctBucketRegionFromCache]
+    ],
+    afterBuild: [
+      [Function: COMPUTE_CHECKSUM],
+      [Function: SET_CONTENT_LENGTH],
+      [Function: SET_HTTP_HOST],
+      [Function: SET_TRACE_ID],
+      [Function: addExpect100Continue],
+      [Function: disableBodySigning]
+    ],
+    restart: [ [Function: RESTART] ],
+    sign: [ [Function (anonymous)], [Function], [Function] ],
+    validateResponse: [ [Function: VALIDATE_RESPONSE], [Function (anonymous)] ],
+    error: [ [Function: ERROR] ],
+    send: [ [Function] ],
+    httpHeaders: [ [Function: HTTP_HEADERS] ],
+    httpData: [ [Function: HTTP_DATA] ],
+    httpDone: [ [Function: HTTP_DONE] ],
+    retry: [
+      [Function: FINALIZE_ERROR],
+      [Function: INVALIDATE_CREDENTIALS],
+      [Function: EXPIRED_SIGNATURE],
+      [Function: CLOCK_SKEWED],
+      [Function: REDIRECT],
+      [Function: RETRY_CHECK],
+      [Function: API_CALL_ATTEMPT_RETRY]
+    ],
+    afterRetry: [ [Function] ],
+    build: [
+      [Function: buildRequest],
+      [Function: addContentType],
+      [Function: computeContentMd5],
+      [Function: computeSseCustomerKeyMd5],
+      [Function: populateURI]
+    ],
+    extractData: [
+      [Function: extractData],
+      [Function: extractRequestId],
+      [Function: hoistPayloadMember],
+      [Function: extractData],
+      [Function: extractErrorFrom200Response]
+    ],
+    extractError: [
+      [Function: extractError],
+      [Function: extractRequestId],
+      [Function: extractError],
+      [Function]
+    ],
+    httpError: [ [Function: ENOTFOUND_ERROR] ],
+    beforePresign: [ [Function: prepareSignedUrl] ],
+    success: [ [Function: API_CALL_ATTEMPT] ],
+    complete: [ [Function: API_CALL], [Function (anonymous)] ]
+  },
+  emit: [Function: emit],
+  API_CALL_ATTEMPT: [Function: API_CALL_ATTEMPT],
+  API_CALL_ATTEMPT_RETRY: [Function: API_CALL_ATTEMPT_RETRY],
+  API_CALL: [Function: API_CALL],
+  signedAt: 2022-10-08T19:38:23.174Z
+}
+end listing bucket items
+listing bucket items
+<ref *1> Request {
+  domain: null,
+  service: Service {
+    config: Config {
+      credentials: [EnvironmentCredentials],
+      credentialProvider: [CredentialProviderChain],
+      region: 'us-east-1',
+      logger: null,
+      apiVersions: {},
+      apiVersion: '2006-03-01',
+      endpoint: 's3.amazonaws.com',
+      httpOptions: [Object],
+      maxRetries: undefined,
+      maxRedirects: 10,
+      paramValidation: true,
+      sslEnabled: true,
+      s3ForcePathStyle: false,
+      s3BucketEndpoint: false,
+      s3DisableBodySigning: true,
+      s3UsEast1RegionalEndpoint: undefined,
+      s3UseArnRegion: undefined,
+      computeChecksums: true,
+      convertResponseTypes: true,
+      correctClockSkew: false,
+      customUserAgent: null,
+      dynamoDbCrc32: true,
+      systemClockOffset: 0,
+      signatureVersion: 's3',
+      signatureCache: true,
+      retryDelayOptions: {},
+      useAccelerateEndpoint: false,
+      clientSideMonitoring: false,
+      endpointDiscoveryEnabled: undefined,
+      endpointCacheSize: 1000,
+      hostPrefixEnabled: true,
+      stsRegionalEndpoints: 'legacy',
+      useFipsEndpoint: false,
+      useDualstackEndpoint: false,
+      token: null,
+      tokenProvider: [TokenProviderChain],
+      params: [Object]
+    },
+    isGlobalEndpoint: false,
+    endpoint: Endpoint {
+      protocol: 'https:',
+      host: 's3.amazonaws.com',
+      port: 443,
+      hostname: 's3.amazonaws.com',
+      pathname: '/',
+      path: '/',
+      href: 'https://s3.amazonaws.com/'
+    },
+    _events: { apiCallAttempt: [Array], apiCall: [Array] },
+    MONITOR_EVENTS_BUBBLE: [Function: EVENTS_BUBBLE],
+    CALL_EVENTS_BUBBLE: [Function: CALL_EVENTS_BUBBLE],
+    _clientId: 3
+  },
+  operation: 'listObjectsV2',
+  params: { Bucket: 'hack-ohio-22-tierlist-images', MaxKeys: 10 },
+  httpRequest: HttpRequest {
+    method: 'GET',
+    path: '/?list-type=2&max-keys=10',
+    headers: {
+      'User-Agent': 'aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback',
+      'Content-Length': 0,
+      Host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      'X-Amz-Content-Sha256': 'UNSIGNED-PAYLOAD',
+      'X-Amz-Date': '20221008T193828Z',
+      'x-amz-security-token': 'IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJGMEQCIFTXSzeNt5sijLajsAug4yH4+wNIoHawAerLwymF+mVdAiB7qs1aAKaybneTHMUZReQxF4b8mx4SAGWjUXZTuo3RFiqXAggwEAAaDDMxMjE5OTE0MDY3OSIM8LjcL3KmePkkn80eKvQBzKLeOXx4Dh/qwuANOAlNmycy8m1r5x9qvhgBHYeRHkS54dS9538ywq42AXXBFiQj8DZPb/U2Dq+3GUvjeiU5uk22RHoftfClrbltZ7gLd2J7c/fqmTvfg7OtEgA7bNo35wvsmM2YwMOHTAo+mfbhTTVZ/CWB2aDvBdmXq18NR7Zra0fWMunNS8kOp0t8DAlBxxwXPBPcJtol9c2z8EmSC5UDyrhrkp9n50Qxwi/JMUs8Yukp+2BaspCzdZ9uKj43fzvStTjc0CMDuWcA5FN3NaFHBZElrVXp67jX5bT6SPSUs8BtAeSyfEzokZ1/JZcK29C8oTCPp4aaBjqeAfoFyLbQNer9VOuGc+0TNBpc87vqsK6Kf8paDUH0YvlKxHFYEghBwweeWowdgBiWLW3tzjTpfC7/Xh42jV2YhqxudCMqLQZ2PpzCNXtC0/TCx7t5936Tjg4Qdq6qiXBvepanNdLObQnI577UAOI7rLTDA1hO5QAyMbNwC1RFAXi7nfGTsc9SPrQeBHJUdne+O+qeFmabOORGkXQ3yMyp',
+      Authorization: 'AWS4-HMAC-SHA256 Credential=ASIAURMEE2VDRI4DWCYB/20221008/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=2dec5c52e21f84d0b3b4fd0526904aee5f5ea993d9a9f8be2b85a3d905488b9b'
+    },
+    body: '',
+    endpoint: {
+      protocol: 'https:',
+      host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      port: 443,
+      hostname: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      pathname: '/',
+      path: '/',
+      href: 'https://s3.amazonaws.com/',
+      constructor: [Function]
+    },
+    region: 'us-east-1',
+    _userAgent: 'aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback',
+    virtualHostedBucket: 'hack-ohio-22-tierlist-images',
+    stream: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 6,
+      _maxListeners: undefined,
+      outputData: [Array],
+      outputSize: 1270,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: null,
+      _header: 'GET /?list-type=2&max-keys=10 HTTP/1.1\r\n' +
+        'User-Agent: aws-sdk-nodejs/2.1231.0 linux/v16.17.1 callback\r\n' +
+        'Content-Length: 0\r\n' +
+        'Host: hack-ohio-22-tierlist-images.s3.amazonaws.com\r\n' +
+        'X-Amz-Content-Sha256: UNSIGNED-PAYLOAD\r\n' +
+        'X-Amz-Date: 20221008T193828Z\r\n' +
+        'x-amz-security-token: IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJGMEQCIFTXSzeNt5sijLajsAug4yH4+wNIoHawAerLwymF+mVdAiB7qs1aAKaybneTHMUZReQxF4b8mx4SAGWjUXZTuo3RFiqXAggwEAAaDDMxMjE5OTE0MDY3OSIM8LjcL3KmePkkn80eKvQBzKLeOXx4Dh/qwuANOAlNmycy8m1r5x9qvhgBHYeRHkS54dS9538ywq42AXXBFiQj8DZPb/U2Dq+3GUvjeiU5uk22RHoftfClrbltZ7gLd2J7c/fqmTvfg7OtEgA7bNo35wvsmM2YwMOHTAo+mfbhTTVZ/CWB2aDvBdmXq18NR7Zra0fWMunNS8kOp0t8DAlBxxwXPBPcJtol9c2z8EmSC5UDyrhrkp9n50Qxwi/JMUs8Yukp+2BaspCzdZ9uKj43fzvStTjc0CMDuWcA5FN3NaFHBZElrVXp67jX5bT6SPSUs8BtAeSyfEzokZ1/JZcK29C8oTCPp4aaBjqeAfoFyLbQNer9VOuGc+0TNBpc87vqsK6Kf8paDUH0YvlKxHFYEghBwweeWowdgBiWLW3tzjTpfC7/Xh42jV2YhqxudCMqLQZ2PpzCNXtC0/TCx7t5936Tjg4Qdq6qiXBvepanNdLObQnI577UAOI7rLTDA1hO5QAyMbNwC1RFAXi7nfGTsc9SPrQeBHJUdne+O+qeFmabOORGkXQ3yMyp\r\n' +
+        'Authorization: AWS4-HMAC-SHA256 Credential=ASIAURMEE2VDRI4DWCYB/20221008/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=2dec5c52e21f84d0b3b4fd0526904aee5f5ea993d9a9f8be2b85a3d905488b9b\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/?list-type=2&max-keys=10',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'hack-ohio-22-tierlist-images.s3.amazonaws.com',
+      protocol: 'https:',
+      didCallback: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(kUniqueHeaders)]: null
+    }
+  },
+  startTime: 2022-10-08T19:38:28.234Z,
+  response: Response {
+    request: [Circular *1],
+    data: null,
+    error: null,
+    retryCount: 0,
+    redirectCount: 0,
+    httpResponse: HttpResponse {
+      statusCode: undefined,
+      headers: {},
+      body: undefined,
+      streaming: false,
+      stream: null,
+      _abortCallback: [Function: callNextListener]
+    },
+    maxRetries: 3,
+    maxRedirects: 10
+  },
+  _asm: AcceptorStateMachine {
+    currentState: 'send',
+    states: {
+      validate: [Object],
+      build: [Object],
+      afterBuild: [Object],
+      sign: [Object],
+      retry: [Object],
+      afterRetry: [Object],
+      send: [Object],
+      validateResponse: [Object],
+      extractError: [Object],
+      extractData: [Object],
+      restart: [Object],
+      success: [Object],
+      error: [Object],
+      complete: [Object]
+    }
+  },
+  _haltHandlersOnError: false,
+  _events: {
+    validate: [
+      [Function (anonymous)],
+      [Function: optInUsEast1RegionalEndpoint],
+      [Function: validateBucketName],
+      [Function],
+      [Function: BUILD_IDEMPOTENCY_TOKENS],
+      [Function: VALIDATE_PARAMETERS],
+      [Function: validateScheme],
+      [Function: validateBucketEndpoint],
+      [Function: correctBucketRegionFromCache]
+    ],
+    afterBuild: [
+      [Function: COMPUTE_CHECKSUM],
+      [Function: SET_CONTENT_LENGTH],
+      [Function: SET_HTTP_HOST],
+      [Function: SET_TRACE_ID],
+      [Function: addExpect100Continue],
+      [Function: disableBodySigning]
+    ],
+    restart: [ [Function: RESTART] ],
+    sign: [ [Function (anonymous)], [Function], [Function] ],
+    validateResponse: [ [Function: VALIDATE_RESPONSE], [Function (anonymous)] ],
+    error: [ [Function: ERROR] ],
+    send: [ [Function] ],
+    httpHeaders: [ [Function: HTTP_HEADERS] ],
+    httpData: [ [Function: HTTP_DATA] ],
+    httpDone: [ [Function: HTTP_DONE] ],
+    retry: [
+      [Function: FINALIZE_ERROR],
+      [Function: INVALIDATE_CREDENTIALS],
+      [Function: EXPIRED_SIGNATURE],
+      [Function: CLOCK_SKEWED],
+      [Function: REDIRECT],
+      [Function: RETRY_CHECK],
+      [Function: API_CALL_ATTEMPT_RETRY]
+    ],
+    afterRetry: [ [Function] ],
+    build: [
+      [Function: buildRequest],
+      [Function: addContentType],
+      [Function: computeContentMd5],
+      [Function: computeSseCustomerKeyMd5],
+      [Function: populateURI]
+    ],
+    extractData: [
+      [Function: extractData],
+      [Function: extractRequestId],
+      [Function: hoistPayloadMember],
+      [Function: extractData],
+      [Function: extractErrorFrom200Response]
+    ],
+    extractError: [
+      [Function: extractError],
+      [Function: extractRequestId],
+      [Function: extractError],
+      [Function]
+    ],
+    httpError: [ [Function: ENOTFOUND_ERROR] ],
+    beforePresign: [ [Function: prepareSignedUrl] ],
+    success: [ [Function: API_CALL_ATTEMPT] ],
+    complete: [ [Function: API_CALL], [Function (anonymous)] ]
+  },
+  emit: [Function: emit],
+  API_CALL_ATTEMPT: [Function: API_CALL_ATTEMPT],
+  API_CALL_ATTEMPT_RETRY: [Function: API_CALL_ATTEMPT_RETRY],
+  API_CALL: [Function: API_CALL],
+  signedAt: 2022-10-08T19:38:28.234Z
+}
+end listing bucket items
