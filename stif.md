@@ -1,11 +1,11 @@
-# STIF - Standard Tierlist Interchange Format v0.1.0
+# STIF - Standard Tierlist Interchange Format v0.1.1
 
  - A STIF (pronounced "stiff") file is a json file with certain required attributes, it should have an extension of .stif or .stf.
  - A STIF file must contain the following top level attributes:
     - version: the version of the STIF format used by the file, an Object with the following attributes:
         - major: a Number, must be 0
         - minor: a Number, must be 1
-        - patch: a Number, must be 0
+        - patch: a Number, must be 1
     - name: the name of the tierlist, a String
     - tiers: the tiers of the tierlist from highest to lowest, an Array of Objects with the following attributes:
         - color: the color of the tier as an rgb or rgba hex string with a #, if rgba, alpha must be 255
