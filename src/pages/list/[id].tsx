@@ -3,7 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../../utils/trpc";
 import { useRouter } from "next/router";
 
-export default () => {
+const List = () => {
     const router = useRouter();
     const { data: session } = useSession();
     let id = router.query.id;
@@ -26,3 +26,5 @@ export default () => {
         {viewingOrEditing} tier list {id} is owned by {JSON.stringify(users.map(user => user.name))}.
     </div>
 }
+
+export default List;

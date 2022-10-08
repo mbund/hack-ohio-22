@@ -48,9 +48,7 @@ const Home: NextPage = () => {
 
           <h2 className="font-bold md:text-[3rem] text-gray-600">Suggested Tierlists</h2>
           <div className="flex flex-row justify-evenly basis-auto space-x-5 flex-nowrap bg-sky-500 bg-opacity-50">
-            {topImages.map(() => {
-              return <img src="example1.png" alt="image 1" className="w-full scale-90" />
-            })}
+            <img src="example1.jpg" alt="image 1" className="w-full scale-90" />
           </div>
           <div className="flex flex-row space-x-10">
             <h2 className="font-bold md:text-[3rem] text-gray-600">Join a tierlist:</h2>
