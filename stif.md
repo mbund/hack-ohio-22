@@ -8,7 +8,7 @@
         - patch: a Number, must be 0
     - name: the name of the tierlist, a String
     - tiers: the tiers of the tierlist from highest to lowest, an Array of Objects with the following attributes:
-        - color: the color of the tier as an rgb or rgba hex string, if rgba, alpha must be 255
+        - color: the color of the tier as an rgb or rgba hex string with a #, if rgba, alpha must be 255
         - name: the name of the tier, a String that must not be ""
     - items: the items in the tierlist, an array of Objects with the following attributes:
         - name: the name of the item, a String that must bot be ""
