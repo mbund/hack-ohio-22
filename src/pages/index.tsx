@@ -32,7 +32,7 @@ export const Header = () => {
 const Home: NextPage = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
-  const topImages = trpc.frontPage.getImages.useQuery().data??[];
+  const topImages = trpc.frontPage.getImages.useQuery().data ?? [];
   console.log(topImages.length);
 
   return (
@@ -45,26 +45,12 @@ const Home: NextPage = () => {
       <Header />
       <main className="bg-gray-200">
         <div className="w-3/4 mx-auto flex min-h-screen flex-col items-center justify-begin p-4 space-y-10">
-<<<<<<< HEAD
-          <h1 className="font-serif text-center text-5xl font-extrabold leading-normal text-gray-600 md:text-[7rem]">
-            Tiers With <span className="text-sky-500 font-sans">Friends</span>
-          </h1>
 
           <h2 className="font-bold md:text-[3rem] text-gray-600">Suggested Tierlists</h2>
           <div className="flex flex-row justify-evenly basis-auto space-x-5 flex-nowrap bg-sky-500 bg-opacity-50">
             {topImages.map(() => {
               return <img src="example1.png" alt="image 1" className="w-full scale-90" />
             })}
-=======
-          <h2 className="font-bold md:text-[3rem] text-gray-600">Suggested Tierlists</h2>
-          <div className="flex flex-row justify-evenly basis-auto space-x-5 flex-nowrap bg-sky-500 bg-opacity-50">
-            <img src="example1.png" alt="image 1" className="w-full scale-90" />
-            <img src="example1.png" alt="image 1" className="w-full scale-90" />
-            <img src="example1.png" alt="image 1" className="w-full scale-90" />
-            <img src="example1.png" alt="image 1" className="w-full scale-90" />
-            <img src="example1.png" alt="image 1" className="w-full scale-90" />
-            <img src="example1.png" alt="image 1" className="w-full scale-90" />
->>>>>>> 5ee17f2b8a74e61bd550d1cb34e9444fc5d15ea1
           </div>
           <div className="flex flex-row space-x-10">
             <h2 className="font-bold md:text-[3rem] text-gray-600">Join a tierlist:</h2>
