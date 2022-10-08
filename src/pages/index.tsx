@@ -24,7 +24,7 @@ export const Header = () => {
       </>
     </div>
     <h1 className="font-serif text-center text-5xl font-extrabold leading-normal text-gray-600 md:text-[7rem]">
-      <a href="/">Tiers With <span className="text-sky-500 font-sans">Friends</span></a>
+      <Link href="/"><a>Tiers With <span className="text-sky-500 font-sans">Friends</span></a></Link>
     </h1>
   </div>;
 }
@@ -78,7 +78,7 @@ const AuthShowcase: React.FC = () => {
     <div className="flex flex-col items-center justify-center gap-2">
       {sessionData && (
         <p className="text-2xl text-blue-500">
-          Logged in as {sessionData?.user?.name}. <a href="/lists" className="underline">My tier lists</a>
+          Logged in as {sessionData?.user?.name}. <Link href="/lists"><a className="underline">My tier lists</a></Link>
         </p>
       )}
       {secretMessage && (
