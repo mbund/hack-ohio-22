@@ -14,6 +14,12 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model tierlist_icon{
+    url String  @id
+    image String
+    name String
+}
+
 model Example {
     id String @id @default(cuid())
 }
@@ -46,13 +52,14 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String     @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?    @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
+    tierLists     TierList[]
 }
 
 model VerificationToken {
@@ -61,4 +68,9 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+model TierList {
+    id    String @id @default(cuid())
+    users User[]
 }
