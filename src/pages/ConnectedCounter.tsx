@@ -19,7 +19,7 @@ export default function ConnectedCounterWrapper() {
 
   return (
     <>
-      <PusherProvider slug={`user-${sess.user?.id}`}>
+      <PusherProvider slug={`global-counter`}>
         <ConnectedCounter />
       </PusherProvider>
     </>
