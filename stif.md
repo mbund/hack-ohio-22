@@ -12,6 +12,6 @@
         - name: the name of the tier, a String that must not be ""
     - items: the items in the tierlist, an array of Objects with the following attributes:
         - name: the name of the item, a String that must bot be ""
-        - tier: the tier the item has been placed in, a Number, it must be an integer at least -1, if -1 the item is not in any tier, otherwise it is in the tiers[tier]
+        - tier: the tier the item has been placed in, a Number, it must be an integer at least -1, if -1 the item is not in any tier, otherwise it is in  tiers[tier]
         - image: a String, the url to the image or ""
     - items in the same tier must be draw in the order in which they appear in items
