@@ -3,6 +3,7 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import { sign } from "crypto";
+import Link from "next/link";
 
 export const Header = () => {
   const { data: sessionData } = useSession();
@@ -73,7 +74,7 @@ const AuthShowcase: React.FC = () => {
     <div className="flex flex-col items-center justify-center gap-2">
       {sessionData && (
         <p className="text-2xl text-blue-500">
-          Logged in as {sessionData?.user?.name}
+          Logged in as {sessionData?.user?.name}. <a href="/lists" className="underline">My tier lists</a>
         </p>
       )}
       {secretMessage && (
