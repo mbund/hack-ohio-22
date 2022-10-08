@@ -7,6 +7,7 @@ import Pusher from 'pusher-js'
 // import { atom } from 'jotai'
 import createContext from 'zustand/context'
 import vanillaCreate from 'zustand/vanilla'
+import State from 'pusher-js/types/src/core/http/state.js';
 
 interface PusherZustandStore {
   pusherClient: Pusher
@@ -17,13 +18,11 @@ interface PusherZustandStore {
 
 const createPusherStore = (slug: string) => {
   let pusherClient: Pusher
-  console.log(Pusher.instances.length);
   if (Pusher.instances.length) {
     pusherClient = Pusher.instances[0] as Pusher
     pusherClient.connect()
   } else {
     const randomUserId = `random-user-id:${Math.random().toFixed(7)}`
-    console.log("create pusher store")
     pusherClient = new Pusher(env.NEXT_PUBLIC_PUSHER_KEY, {
       cluster: env.NEXT_PUBLIC_PUSHER_CLUSTER,
       authEndpoint: '/api/pusher/auth-channel',
@@ -50,7 +49,6 @@ const createPusherStore = (slug: string) => {
 
   // Update helper that sets 'members' to contents of presence channel's current members
   const updateMembers = () => {
-    console.log("Update members")
     store.setState(() => ({
       members: new Map(Object.entries(presenceChannel.members.members)),
     }))
@@ -137,4 +135,3 @@ export function useSubscribeToEvent<MessageType>(
 }
 
 export const useCurrentMemberCount = () => usePusherZustandStore(s => s.members.size)
-

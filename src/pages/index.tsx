@@ -3,6 +3,7 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Link from "next/link";
+import ConnectedCounterWrapper from "./ConnectedCounter";
 
 export const Header = () => {
   const { data: sessionData } = useSession();
@@ -21,6 +22,7 @@ export const Header = () => {
         )}
       </>
     </div>
+    <ConnectedCounterWrapper></ConnectedCounterWrapper>
     <h1 className="font-serif text-center text-5xl font-extrabold leading-normal text-gray-600 md:text-[7rem]">
       <Link href="/"><a>Tiers With <span className="text-sky-500 font-sans">Friends</span></a></Link>
     </h1>

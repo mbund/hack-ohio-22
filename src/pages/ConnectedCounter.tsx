@@ -1,4 +1,4 @@
-import { PusherProvider, useCurrentMemberCount } from './pusher'
+import { PusherProvider, useCurrentMemberCount } from '../utils/pusher'
 import { useSession } from 'next-auth/react'
 
 const ConnectedCounter = () => {
@@ -19,7 +19,6 @@ export default function ConnectedCounterWrapper() {
 
   return (
     <>
-      <span>Thanos Car</span>
       <PusherProvider slug={`user-${sess.user?.id}`}>
         <ConnectedCounter />
       </PusherProvider>
