@@ -2,8 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
-import S3 from 'aws-sdk/clients/s3';
-import { sign } from "crypto";
 import Link from "next/link";
 
 export const Header = () => {

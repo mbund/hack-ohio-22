@@ -8,18 +8,6 @@ export const frontPageRouter = t.router({
             apiVersion: '2006-03-01',
             region: "us-east-1",
         });
-        console.log("listing bucket items");
-        console.log(imageBucket.listObjectsV2({ Bucket: 'hack-ohio-22-tierlist-images', MaxKeys: 10 }, (err, data) => {
-            if (err) {
-                console.error(err);
-            } else {
-                if (data.Contents) {
-                    return data.Contents;
-                }
-                console.error("no contents");
-            }
-        }));
-        console.log("end listing bucket items");
 
         const image_names = ["xml_tree.jpg"];
         const images: S3.Body[] = [];
