@@ -24,6 +24,7 @@ import { CSS } from '@dnd-kit/utilities';
 
 import { useState } from "react";
 import { url } from "inspector";
+import { trpc } from "../utils/trpc";
 
 type Stif = {
     version: {
@@ -43,79 +44,12 @@ type Stif = {
     }[],
 };
 
-const stfFile: Stif = {
-    "version": {
-        "major": 0,
-        "minor": 1,
-        "patch": 2
-    },
-    "name": "star wars movies",
-    "tiers": [
-        {
-            "color": "#39dd02",
-            "name": "S"
-        },
-        {
-            "color": "#4cb700",
-            "name": "A"
-        },
-        {
-            "color": "#8ad80d",
-            "name": "B"
-        },
-        {
-            "color": "#d7f738",
-            "name": "C"
-        },
-        {
-            "color": "#e5ac00",
-            "name": "D"
-        },
-        {
-            "color": "#fc2c02",
-            "name": "F"
-        }
-    ],
-    "items": [
-        {
-            "name": "the_phantom_menace.jpg",
-            "tier": -1,
-            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/the_phantom_menace.jpg"
-        },
-        {
-            "name": "attack_of_the_clones.jpg",
-            "tier": -1,
-            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/attack_of_the_clones.jpg"
-        },
-        {
-            "name": "revenge_of_the_sith.jpg",
-            "tier": 0,
-            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/revenge_of_the_sith.jpg"
-        },
-        {
-            "name": "a_new_hope.jpg",
-            "tier": -1,
-            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/a_new_hope.jpg"
-        },
-        {
-            "name": "the_empire_strikes_back.jpg",
-            "tier": -1,
-            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/the_empire_strikes_back.jpg"
-        },
-        {
-            "name": "return_of_the_jedi.jpg",
-            "tier": -1,
-            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/return_of_the_jedi.jpg"
-        }
-    ]
-};
-
 const fromStif = (stif: Stif) => {
-    let items: string[][] = [];
-    for (let i = 0; i < stfFile.tiers.length + 1; i++) {
+    const items: string[][] = [];
+    for (let i = 0; i < stif.tiers.length + 1; i++) {
         items.push([] as string[]);
     }
-    for (const item of stfFile.items) {
+    for (const item of stif.items) {
         items[item.tier === -1 ? items.length - 1 : item.tier]!.push(item.image);
     }
     const tier = stif.tiers;
@@ -140,16 +74,51 @@ const toStif = (items: string[][], tiers: { color: string, name: string }[], nam
     }
 }
 
-const TierListEditor = () => {
+const blankStif: Stif = {
+    "version": {
+        "major": 0,
+        "minor": 1,
+        "patch": 2
+    },
+    "name": "",
+    "tiers": [
+        {
+            "color": "#39dd02",
+            "name": "S"
+        },
+    ],
+    "items": [
+        {
+            "name": "the_phantom_menace.jpg",
+            "tier": -1,
+            "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/the_phantom_menace.jpg"
+        },
+    ]
+};
+
+const TierListEditor = ({ id }: { id: string }) => {
     const sensors = useSensors(
         useSensor(PointerSensor),
     )
 
-    const [items, setItems] = useState(fromStif(stfFile).items);
+    const stif = blankStif
 
-    const tiers = stfFile.tiers;
+    // const x = trpc.getTierList.useQuery(id)
+    // const y = x.data ?? { stif: blankStif }
+    // const stif = y.stif as Stif
+    // const stif = x.data?.stif as Stif
+    // console.log(stif)
+    
+    // const [items, setItems] = useState(fromStif(stfFile).items);
+    // console.log(x.data)
+    // if (x.data?.stif === undefined) return <></>
+    // const stif = x.data?.stif as Stif
+    // console.log(stif)
+    // const items = fromStif(stif).items
+    const [items, setItems] = useState(fromStif(stif).items)
+    const tiers = stif.tiers
 
-    const [active, setActive] = useState<undefined | UniqueIdentifier>();
+    // const [active, setActive] = useState<undefined | UniqueIdentifier>();
 
     const getContainerIndex = (id: string): [number | undefined, number | undefined] => {
         if (id.startsWith("row:")) {
@@ -194,6 +163,7 @@ const TierListEditor = () => {
             itemsCopy[endRow]!.splice(endCol!, 0, item!);
         }
         setItems(itemsCopy);
+        // trpc.setStif.useMutation().mutate({ id: id, stif: itemsCopy })
     }
 
     const onDragEnd = (e: DragEndEvent) => {
@@ -215,7 +185,7 @@ const TierListEditor = () => {
             return;
         }
 
-        let itemsCopy = [...items.map(x => [...x])];
+        const itemsCopy = [...items.map(x => [...x])];
         const [item] = itemsCopy[startRow]!.splice(startCol, 1);
         if (endCol === undefined) {
             itemsCopy[endRow]!.push(item!);
@@ -223,6 +193,7 @@ const TierListEditor = () => {
             itemsCopy[endRow]!.splice(endCol!, 0, item!);
         }
         setItems(itemsCopy);
+        // trpc.setStif.useMutation().mutate({ id: id, stif: itemsCopy })
     }
 
     return <DndContext

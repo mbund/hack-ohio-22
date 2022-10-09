@@ -22,8 +22,93 @@ const Lists: NextPage = () => {
         return <>loading user...</>;
     }
 
+    type Stif = {
+        version: {
+            major: 0,
+            minor: 1,
+            patch: 2,
+        },
+        name: string,
+        tiers: {
+            color: string,
+            name: string
+        }[],
+        items: {
+            name: string,
+            tier: number,
+            image: string,
+        }[],
+    };
+
+    const stfFile: Stif = {
+        "version": {
+            "major": 0,
+            "minor": 1,
+            "patch": 2
+        },
+        "name": "star wars movies",
+        "tiers": [
+            {
+                "color": "#39dd02",
+                "name": "S"
+            },
+            {
+                "color": "#4cb700",
+                "name": "A"
+            },
+            {
+                "color": "#8ad80d",
+                "name": "B"
+            },
+            {
+                "color": "#d7f738",
+                "name": "C"
+            },
+            {
+                "color": "#e5ac00",
+                "name": "D"
+            },
+            {
+                "color": "#fc2c02",
+                "name": "F"
+            }
+        ],
+        "items": [
+            {
+                "name": "the_phantom_menace.jpg",
+                "tier": -1,
+                "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/the_phantom_menace.jpg"
+            },
+            {
+                "name": "attack_of_the_clones.jpg",
+                "tier": -1,
+                "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/attack_of_the_clones.jpg"
+            },
+            {
+                "name": "revenge_of_the_sith.jpg",
+                "tier": 0,
+                "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/revenge_of_the_sith.jpg"
+            },
+            {
+                "name": "a_new_hope.jpg",
+                "tier": -1,
+                "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/a_new_hope.jpg"
+            },
+            {
+                "name": "the_empire_strikes_back.jpg",
+                "tier": -1,
+                "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/the_empire_strikes_back.jpg"
+            },
+            {
+                "name": "return_of_the_jedi.jpg",
+                "tier": -1,
+                "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/return_of_the_jedi.jpg"
+            }
+        ]
+    };
+
     const createList = () => {
-        createPostMutation.mutate()
+        createPostMutation.mutate(stfFile)
     }
 
     return <>

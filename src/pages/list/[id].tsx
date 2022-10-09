@@ -2,6 +2,7 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../../utils/trpc";
 import { useRouter } from "next/router";
+import TierListEditor from "../tierlisteditor";
 
 const List = () => {
     const router = useRouter();
@@ -23,7 +24,8 @@ const List = () => {
         viewingOrEditing = "Editing";
     }
     return <div>
-        {viewingOrEditing} tier list {id} is owned by {JSON.stringify(users.map(user => user.name))}.
+        {/* {viewingOrEditing} tier list {id} is owned by {JSON.stringify(users.map(user => user.name))}. */}
+        <TierListEditor id={id} />
     </div>
 }
 

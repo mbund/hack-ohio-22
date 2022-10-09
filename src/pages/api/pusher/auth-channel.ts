@@ -11,9 +11,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
   const auth = pusherServerClient.authorizeChannel(socket_id, channel_name, {
     user_id,
-    user_info: {
-      name: 'superman',
-    },
   })
   res.send(auth)
 }

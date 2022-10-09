@@ -72,5 +72,6 @@ model VerificationToken {
 
 model TierList {
     id    String @id @default(cuid())
+    stif  Json
     users User[]
 }
