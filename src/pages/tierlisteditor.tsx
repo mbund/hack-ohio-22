@@ -211,7 +211,6 @@ const TierListEditor = () => {
         onDragOver={onDragOver}
         onDragEnd={onDragEnd}
     >
-        <pre>{JSON.stringify(items)}</pre>
         <div className="border-x border-black flex flex-col">
             {items.map((x, i) => <Tier key={i} color={tiers[i]?.color} name={tiers[i]?.name} isLast={i === items.length - 1} id={`row:${i}`} items={x} />)}
         </div>
@@ -246,7 +245,7 @@ const Item = ({ id }: { id: string }) => {
         transition,
     } = useSortable({ id });
     const style = {
-        transform: CSS.Transform.toString(transform),
+        // transform: CSS.Transform.toString(transform),
         // transition,
     };
     return <img ref={setNodeRef} style={style} {...attributes} {...listeners} className="w-[80px] h-[80px] object-cover block bg-white text-center" src={id.substring("item:".length)} />
