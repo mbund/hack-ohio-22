@@ -23,12 +23,13 @@ import React, { useEffect } from 'react';
 import { CSS } from '@dnd-kit/utilities';
 
 import { useState } from "react";
+import { url } from "inspector";
 
 type Stif = {
     version: {
         major: 0,
         minor: 1,
-        patch: 1,
+        patch: 2,
     },
     name: string,
     tiers: {
@@ -46,7 +47,7 @@ const stfFile: Stif = {
     "version": {
         "major": 0,
         "minor": 1,
-        "patch": 1
+        "patch": 2
     },
     "name": "star wars movies",
     "tiers": [
@@ -88,7 +89,7 @@ const stfFile: Stif = {
         },
         {
             "name": "revenge_of_the_sith.jpg",
-            "tier": -1,
+            "tier": 0,
             "image": "https://hack-ohio-22-tierlist-images.s3.amazonaws.com/revenge_of_the_sith.jpg"
         },
         {
@@ -109,24 +110,42 @@ const stfFile: Stif = {
     ]
 };
 
+const fromStif = (stif: Stif) => {
+    let items: string[][] = [];
+    for (let i = 0; i < stfFile.tiers.length + 1; i++) {
+        items.push([] as string[]);
+    }
+    for (const item of stfFile.items) {
+        items[item.tier === -1 ? items.length - 1 : item.tier]!.push(item.image);
+    }
+    const tier = stif.tiers;
+    const name = stif.name;
+    return { items, tier, name };
+}
+
+const toStif = (items: string[][], tiers: { color: string, name: string }[], name: string) => {
+    return {
+        version: {
+            major: 0,
+            minor: 1,
+            patch: 2,
+        },
+        name,
+        tiers,
+        items: items.flatMap((row, i) => row.map(url => ({
+            name: url,
+            image: url,
+            tier: i === tiers.length ? -1 : i,
+        })))
+    }
+}
+
 const TierListEditor = () => {
     const sensors = useSensors(
         useSensor(PointerSensor),
     )
 
-    const [items, setItems] = useState([] as string[][]);
-
-    useEffect(() => {
-        let items: string[][] = [];
-        for (let i = 0; i < stfFile.tiers.length + 1; i++) {
-            items.push([] as string[]);
-        }
-        for (const item of stfFile.items) {
-            items[item.tier === -1 ? items.length - 1 : item.tier]!.push(item.image);
-        }
-        console.log(items);
-        setItems(items);
-    }, [stfFile]);
+    const [items, setItems] = useState(fromStif(stfFile).items);
 
     const tiers = stfFile.tiers;
 
@@ -211,6 +230,7 @@ const TierListEditor = () => {
         onDragOver={onDragOver}
         onDragEnd={onDragEnd}
     >
+        <pre>{JSON.stringify(toStif(items, tiers, "odijfsoi"))}</pre>
         <div className="border-x border-black flex flex-col">
             {items.map((x, i) => <Tier key={i} color={tiers[i]?.color} name={tiers[i]?.name} isLast={i === items.length - 1} id={`row:${i}`} items={x} />)}
         </div>
